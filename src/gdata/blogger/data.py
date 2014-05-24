@@ -54,13 +54,12 @@ class BloggerEntry(gdata.data.GDEntry):
     Returns:
       The blog's unique id as a string.
     """
-    if self.id.text:
-      match = BLOG_ID_PATTERN.match(self.id.text)
+    if not self.id.text:
+      return None
+    for pattern in BLOG_ID_PATTERN, BLOG_ID2_PATTERN:
+      match = pattern.match(self.id.text)
       if match:
         return match.group(2)
-      else:
-        return BLOG_ID2_PATTERN.match(self.id.text).group(2)
-    return None
 
   GetBlogId = get_blog_id
 

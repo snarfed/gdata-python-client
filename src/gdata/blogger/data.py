@@ -32,7 +32,7 @@ THR_TEMPLATE = '{http://purl.org/syndication/thread/1.0}%s'
 
 BLOG_NAME_PATTERN = re.compile('(http://)(\w*)')
 BLOG_ID_PATTERN = re.compile('(tag:blogger.com,1999:blog-)(\w*)')
-BLOG_ID2_PATTERN = re.compile('tag:blogger.com,1999:user-(\d+)\.blog-(\d+)')
+BLOG_ID2_PATTERN = re.compile('tag:blogger.com,1999:user-g?(\d+)\.blog-(\d+)')
 POST_ID_PATTERN = re.compile(
     '(tag:blogger.com,1999:blog-)(\w*)(.post-)(\w*)')
 PAGE_ID_PATTERN = re.compile(
